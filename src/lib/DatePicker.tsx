@@ -2,6 +2,9 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import './DatePicker.css';
+import arrowLeft from '../../assets/icons/arrowLeft.svg';
+import arrowRight from '../../assets/icons/arrowRight.svg';
+import dropdownArrow from '../../assets/icons/dropdownArrow.svg';
 
 interface DatePickerProps {
   value: Date | null;
@@ -129,13 +132,13 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange, ageRest
     <div className="date-picker">
       <div className="header">
         <button onClick={handlePrevMonth} className="nav-arrow left" disabled={!!isPrevMonthDisabled}>
-            <img src='/assets/icons/arrowLeft.svg' alt="arrow-left" />
+            <img src={arrowLeft} alt="arrow-left" />
         </button>
         <div className="month-year">
           <div className="dropdown" ref={monthDropdownRef}>
             <button className={`dropdown-toggle ${isMonthDropdownOpen ? 'dropdown-open' : ''}`} onClick={() => setMonthDropdownOpen(!isMonthDropdownOpen)}>
               {monthNames[month]}
-              <img src='/assets/icons/dropdownArrow.svg' alt="arrow-down" />
+              <img src={dropdownArrow} alt="arrow-down" />
             </button>
             {isMonthDropdownOpen && (
               <div className="dropdown-panel">
@@ -150,7 +153,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange, ageRest
           <div className="dropdown" ref={yearDropdownRef}>
             <button className={`dropdown-toggle ${isYearDropdownOpen ? 'dropdown-open' : ''}`} onClick={() => setYearDropdownOpen(!isYearDropdownOpen)}>
               {year}
-              <img src='/assets/icons/dropdownArrow.svg' alt="arrow-down" />
+              <img src={dropdownArrow} alt="arrow-down" />
             </button>
             {isYearDropdownOpen && (
               <div className="dropdown-panel">
@@ -160,7 +163,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({ value, onChange, ageRest
           </div>
         </div>
         <button onClick={handleNextMonth} className="nav-arrow right" disabled={!!isNextMonthDisabled}>
-            <img src='/assets/icons/arrowRight.svg' alt="arrow-right" />
+            <img src={arrowRight} alt="arrow-right" />
         </button>
       </div>
       <div className="days-of-week">
