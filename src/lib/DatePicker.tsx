@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './DatePicker.css';
-import arrowLeft from '../../assets/icons/arrowLeft.svg';
-import arrowRight from '../../assets/icons/arrowRight.svg';
-import dropdownArrow from '../../assets/icons/dropdownArrow.svg';
+import arrowLeft from '../assets/icons/arrowLeft.svg';
+import arrowRight from '../assets/icons/arrowRight.svg';
+import dropdownArrow from '../assets/icons/dropdownArrow.svg';
 
 interface DatePickerProps {
   value: Date | null;

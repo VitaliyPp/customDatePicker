@@ -8,7 +8,9 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
+      outDir: 'dist',
+      // rollupTypes: true,
+      // insertTypesEntry: true,
     }),
     libInjectCss(),
   ],
